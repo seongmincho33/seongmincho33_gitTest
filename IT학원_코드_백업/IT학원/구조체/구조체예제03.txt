@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct data 
+{
+	int age;
+	char name[20];
+} DATA, *PDATA;
+//typedef struct data DATA;
+int main()
+{
+	DATA member[3];
+	member[0].age = 10;
+	member[1].age = 20;
+	member[2].age = 30;
+	memcpy(member[0].name, "홍길동", strlen("홍길동") + 1);
+	memcpy(member[1].name, "임꺽정", strlen("임꺽정") + 1);
+	memcpy(member[2].name, "일지매", strlen("일지매") + 1);
+
+	return 0;
+}

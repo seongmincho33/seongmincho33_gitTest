@@ -1,0 +1,15 @@
+#include <stdio.h>
+void func(int* pData1, int* pData2)
+{
+	*pData1 += 10;
+	*pData2 *= 10;
+}
+int main()
+{
+	int nData1 = 1, nData2 = 2;
+
+	func(&nData1, &nData2);
+
+	printf("%d %d\n", nData1, nData2); // 11 20 Ãâ·Â
+	return 0;
+}

@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char str[10] = "hello";
+
+	printf("sizeof : %d\n", sizeof(str));
+	printf("strlen : %d\n", strlen(str));
+	return 0;
+}

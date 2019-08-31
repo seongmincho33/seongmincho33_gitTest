@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <malloc.h>
+
+typedef struct data 
+{
+	int data1;
+	int data2;
+}DATA;
+
+int main()
+{
+	DATA* p = (DATA *)malloc(8);
+
+	(*p).data1 = 10;
+	p->data2 = 20;
+	printf("%d %d\n", p->data1, (*p).data2);
+
+	free(p);
+	return 0;
+}

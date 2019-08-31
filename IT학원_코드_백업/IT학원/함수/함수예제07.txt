@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+// gcd 함수를 동일한 기능의 재귀함수로 재 구현해주세요.
+
+int gcd(int data1, int data2)
+{
+	if (data2 == 0)
+		return data1;
+	else
+		gcd(data2, data1 % data2);	
+}
+int main()
+{
+	int data1, data2;
+	printf("두 수의 최대 공약수 구하기\n");
+	printf("두 수 입력 : ");
+	scanf_s("%d%d", &data1, &data2);
+	printf("최대 공약수는 %d\n", gcd(data1, data2));
+	return 0;
+}

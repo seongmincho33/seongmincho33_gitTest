@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+typedef struct data {
+	int age;
+	char name[20];
+} DATA, *PDATA;
+//typedef struct data DATA;
+
+int main(){
+	struct data stData;
+	stData.age = 10;
+	memcpy(stData.name , "ȫ�浿", strlen("ȫ�浿")+1);
+	printf("age = %d\nname = %s\n", stData.age, stData.name);
+
+	DATA stData2;
+	stData2 = stData;
+	stData2.age = 20;
+	printf("age = %d\nname = %s\n", stData2.age, stData2.name);
+
+	return 0;
+}

@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+struct data {
+	int age;
+	char name[20];
+};
+int main(){
+	struct data stData;
+	stData.age = 10;
+	memcpy(stData.name , "ȫ�浿", strlen("ȫ�浿")+1);
+	printf("age = %d\nname = %s\n", stData.age, stData.name);
+	return 0;
+}

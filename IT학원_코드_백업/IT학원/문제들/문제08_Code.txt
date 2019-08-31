@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+
+typedef struct student 
+{
+	char* name;
+	char* addr;
+}Student;
+typedef struct score
+{
+	int* kor;
+	int* eng;
+	int* math;
+	int sum;
+}Score;
+typedef struct info
+{
+	Student * i;
+	Score * s;
+}Info;
+int main()
+{
+	Info * p = (Info*)malloc(sizeof(Info));
+	(*p).i = (Student *)malloc(sizeof(Student));
+	(*p).s = (Score*)malloc(sizeof(Score));
+	(*(*p).i).name =  (char*)malloc(20);
+	(*(*p).i).addr = (char*)malloc(20);
+	(*(*p).s).kor = (int*)malloc(4);
+	(*(*p).s).eng = (int*)malloc(4);
+	(*(*p).s).math = (int*)malloc(4);
+
+	memcpy(p->i->name, "홍길동", strlen("홍길동") + 1);
+	memcpy(p->i->addr, "종로구", strlen("종로구") + 1);
+	*p->s->kor = 100;
+	*p->s->eng = 80;
+	*(*(*p).s).math = 60;
+	(*(*p).s).sum = *p->s->kor + *p->s->eng + *(*(*p).s).math;
+
+	printf("이름 : %s\n", p->i->name);
+	printf("주소 : %s\n", p->i->addr);
+	printf("국어 : %d\n", *p->s->kor);
+	printf("영어 : %d\n", *p->s->eng);
+	printf("수학 : %d\n", *p->s->math);
+	printf("합계 : %d\n", p->s->sum);
+
+	free((*(*p).s).math);
+	free((*(*p).s).eng);
+	free((*(*p).s).kor);
+	free((*(*p).i).addr);
+	free((*(*p).i).name);
+	free(p->i);
+	free(p->s);
+	free(p);
+	return 0;
+}

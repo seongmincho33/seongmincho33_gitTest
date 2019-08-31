@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+
+typedef struct data
+{
+	int data1;
+	int data2;
+}DATA;
+typedef struct data2
+{
+	DATA d1;
+	char name[20];
+}DATA2;
+
+int main()
+{
+	// DATA2 자료형을 HEAP 공간에 메모리를 할당해주세요.
+	DATA2 * p = (DATA2 *)malloc(sizeof(DATA2));
+
+	// 각각 공간에 데이터 입력, 출력 해주세요.
+	(*p).d1.data1 = 10;
+	p->d1.data2 = 20;
+	memcpy((*p).name, "string", strlen("string") + 1);
+	printf("%d %d %s\n", p->d1.data1, (*p).d1.data2, p->name);
+
+	// 동적할당해제.
+	free(p);
+	return 0;
+}

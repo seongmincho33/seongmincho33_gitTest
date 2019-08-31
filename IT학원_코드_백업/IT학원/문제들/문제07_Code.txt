@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+
+typedef struct student 
+{
+	char* name;
+	char* addr;
+}Student;
+
+int main()
+{
+	Student * s = (Student*)malloc(sizeof(Student));
+	(*s).name = (char *)malloc(sizeof(char) * 20);
+	s->addr = (char *)malloc(20);
+
+	memcpy((*s).name, "홍길동", strlen("홍길동")+1);
+	memcpy((*s).addr, "종로구", strlen("종로구") + 1);
+
+	printf("이름 : %s\n주소 : %s\n", s->name, s->addr);
+
+	free(s->addr);
+	free((*s).name);
+	free(s);
+	return 0;
+}

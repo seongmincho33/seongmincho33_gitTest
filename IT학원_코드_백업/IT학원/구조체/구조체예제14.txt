@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+typedef struct data1 
+{
+	int a;
+	int b;
+}DATA1;
+typedef struct data2
+{
+	int a;
+	DATA1 b;
+}DATA2;
+typedef struct data3
+{
+	DATA1 a;
+	DATA2 b;
+}DATA3;
+
+int main()
+{
+	DATA3 stData;
+
+	stData.a.a = 10;
+	stData.a.b = 20;
+	stData.b.a = 30;
+	stData.b.b.a = 40;
+	stData.b.b.b = 50;
+
+	printf("%d %d %d %d %d\n", stData.a.a, stData.a.b, stData.b.a,
+		stData.b.b.a, stData.b.b.b);
+	return 0;
+}

@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+
+typedef struct data
+{
+	int data1;
+	int data2;
+}DATA;
+typedef struct data2
+{
+	DATA * d1;
+	char name[20];
+}DATA2;
+
+int main()
+{
+	DATA2* p = (DATA2*)malloc(sizeof(DATA2));
+	(*p).d1 = (DATA*)malloc(sizeof(DATA));
+
+	(*(*p).d1).data1 = 10;
+	p->d1->data2 = 20;
+
+	printf("data1 : %d\ndata2 : %d\n", p->d1->data1, (*(*p).d1).data2);
+	
+	free(p->d1);
+	free(p);
+	return 0;
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+	char sData1[] = "6789012345";
+	char sData2[] = "IJKLABCDEFGH";
+	int year;
+
+	printf("입력 : ");
+	scanf_s("%d", &year);
+	if (year < 1 || year > 1000000)
+		return 0;
+
+	printf("출력 : %c%c\n",sData2[year%12],sData1[year%10]);
+	return 0;
+}

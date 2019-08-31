@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+typedef struct data1
+{
+	int n1; // 10
+	int n2; // 20
+}DATA1, * PDATA;
+typedef struct data2
+{
+	int n3; // 30
+	DATA1 d;
+}DATA2;
+typedef struct data3 
+{
+	int n4; // 40
+	DATA1 d1;
+	DATA2 d2;
+}DATA3;
+
+int main()
+{
+	DATA3 stData;
+
+	return 0;
+}

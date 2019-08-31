@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct score
+{
+	int kor;
+	int eng;
+	int math;
+}SCORE;
+typedef struct data
+{
+	int age;
+	char name[20];
+	char mobile[20];
+	SCORE sc;
+} DATA, *PDATA;
+
+int main()
+{
+	DATA member;
+
+	printf("이름 : ");
+	gets_s(member.name, sizeof(member.name));
+	member.age = 20;
+
+	printf("국어 : ");
+	scanf_s("%d", &member.sc.kor);
+	printf("영어 : ");
+	scanf_s("%d", &member.sc.eng);
+	member.sc.math = 100;
+
+	printf("이름\t나이\t국어\t영어\t수학\n");
+	printf("%s\t%d\t%d\t%d\t%d\n", member.name, member.age, member.sc.kor, member.sc.eng, member.sc.math);
+	return 0;
+}

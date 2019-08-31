@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <conio.h>
+char convert(char data)
+{
+	if (data >= 'a' && data <= 'z')
+	{
+		//'a' == 97
+		//'A' == 65
+		data = data - 32;
+	}
+	return data;
+}
+// 함수를 만들어주세요
+// 함수의 기능은 Argument의 데이터가 소문자 일때 대문자로 변경.
+int main()
+{
+	char data;
+	while(1)
+	{ 
+		data = _getch();
+		if (data == 0x1b)
+			break;
+		data = convert(data);
+		_putch(data);
+	}
+
+	return 0;
+}

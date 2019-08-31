@@ -1,0 +1,24 @@
+1) string.h는 문자열과 관련된 함수들을 포함하고 있는 표준라이브러리(Strandard library) 헤더파일이다.
+
+2) strlen() 함수는 문자열의 길이를 NULL문자 이전까지 반환하는 함수이다.
+
+3) strcpy()함수는 문자열을 복사하는 함수이며, strcpy(str0, str1)은 str1을 str0에 복사하겠다는 의미이다. 
+strncpy() 함수는 같은 기능을 하지만 복사할 문자열의 길이를 제한할 수 있다. 
+strncp(a, b, sizeof(a))은 b를 a에 저장하되 a의 사이즈만큼 저장하겠다는 의미이다.
+그러므로 strncpy는 strcpy보다 문자열을 복사하는데 더 느리지만, 안전한 함수이다.
+
+4) strcat() 함수는 인수로 전달되는 두 문자열을 연결하여, 첫 번째 인수에 저장하는 함수이다. 
+strcat(str1, str2)의 의미는 str1 = Welcom 에 str2 = to Korea 를 붙여 str1에 저장하는 것이다. 
+그러므로 str1 = Welcome to Korea가 된다. 마찬가지로 strncat은 마지만 인수로 추가될 문자열의 길이를 지정할 수 있다.
+
+5) strstr()함수는 문자열을 검색해주는 함수이다. 
+두 인수를 받아 두 번째 문자열을 첫 번째 문자열에서 검색하는 함수이다.
+ strstr(str2, "to")의 의미는 str2 문자열에서 to를 찾아 그 주소를 받환하라는 의미이다. 
+만약 존재하지 않으면 NULL문자가 반환된다.
+
+6) strcmp는 두 문자열을 비교하는 함수이다. 
+strcmp(str1, str2)에서 str1과 str2가 같으면 0을 반환하고, 앞의 문자가 더 작으면 음수를 크면 양수를 반환한다. 
+모든 문자는 아스키코드(ASCII)를 기반으로 작성되기 때문에 비교가 가능한 것이다. 
+문자열을 비교할 때는 가장 왼쪽의 문자열부터 비교하므로 abc < bcd 가 성립된다. 
+그리고 첫 번째 문자가 같다면 그 다음 문자를 비교하므로 abc < abe 가 성립된다.
+[출처] [C언어] 문법 14. String.h : strlen, strcpy, strncpy, strcat, strncat, strstr, strcmp|작성자 전용희

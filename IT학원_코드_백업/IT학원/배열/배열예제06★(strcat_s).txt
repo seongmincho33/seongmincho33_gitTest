@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+/*strcat_s(d, 3, s); 문자열 d 에 문자열 s 를 추가함.
+ d 가 확보한 공간을 3 으로 전달함.*/
+int main()
+{
+	char str1[20] = "Care";
+	char str2[10] = "_Team";
+
+	strcat_s(str1, sizeof(str1), str2);//문자열을 덧붙이는 함수들: strcat, strncat.
+	printf("str1 : %s\n", str1);
+	printf("str2 : %s\n", str2);
+	return 0;
+}

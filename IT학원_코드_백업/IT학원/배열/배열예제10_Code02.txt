@@ -1,0 +1,23 @@
+#include <stdio.h>
+//https://blog.naver.com/cucdapy/221013179050
+//2차원 char배열 원리를 알아야함.
+int main()
+{
+	char sData1[10][4] = {
+		"경", "신", "임", "계", "갑",
+		"을", "병", "정", "무", "기" 
+	};
+	char sData2[12][4] = {
+		"신", "유", "술", "해", "자", "축",
+		"인", "묘", "진", "사", "오", "미" 
+	};
+	int year;
+
+	printf("입력 : ");
+	scanf_s("%d", &year);
+	if (year < 1 || year > 1000000)
+		return 0;
+
+	printf("출력 : %s%s\n",sData1[year%10],sData2[year%12]);
+	return 0;
+}

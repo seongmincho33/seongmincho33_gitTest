@@ -1,0 +1,16 @@
+#include <stdio.h>
+void convert(char** p2)
+{
+	**p2 = 'A';
+	//*(*p2 + 13) = 'N';
+	(*p2)[13] = 'N';
+}
+int main()
+{
+	char str[20] = "abcdefghijklmn";
+	char* p = str;
+	convert(&p);
+
+	printf("%s\n", str); // "AbcdefghijklmN"
+	return 0;
+}

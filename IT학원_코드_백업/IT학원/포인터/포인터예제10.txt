@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+
+void steal(char * pStr)
+{
+	strcpy_s(pStr, 20,"Good Night");
+}
+int main()
+{
+	char str[20] = "Good Bye!";
+
+	printf("%s\n", str);
+	steal(str);
+	printf("%s\n", str); //Good Night¿Ã √‚∑¬
+	return 0;
+}

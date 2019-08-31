@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+/*5) strstr()함수는 문자열을 검색해주는 함수이다. 
+두 인수를 받아 두 번째 문자열을 첫 번째 문자열에서 검색하는 함수이다.
+ strstr(str2, "to")의 의미는 str2 문자열에서 to를 찾아 그 주소를 받환하라는 의미이다. 
+만약 존재하지 않으면 NULL문자가 반환된다.
+
+6) strcmp는 두 문자열을 비교하는 함수이다. 
+strcmp(str1, str2)에서 str1과 str2가 같으면 0을 반환하고, 앞의 문자가 더 작으면 음수를 크면 양수를 반환한다. 
+모든 문자는 아스키코드(ASCII)를 기반으로 작성되기 때문에 비교가 가능한 것이다. 
+문자열을 비교할 때는 가장 왼쪽의 문자열부터 비교하므로 abc < bcd 가 성립된다. 
+그리고 첫 번째 문자가 같다면 그 다음 문자를 비교하므로 abc < abe 가 성립된다.*/
+
+int main()
+{
+	char str[] = "webshell.asp";
+	char* p = strstr(str, ".");
+	
+	if (strcmp(p+1, "asp") == 0) {
+		printf("업로드 불가능한 파일 입니다.\n");
+	}
+	else {
+		printf("업로드 가능한 파일 입니다.\n");
+	}
+	return 0;
+}

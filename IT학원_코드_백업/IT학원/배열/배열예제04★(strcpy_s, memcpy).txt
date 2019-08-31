@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+/*3) strcpy()함수는 문자열을 복사하는 함수이며, strcpy(str0, str1)은 str1을 str0에 복사하겠다는 의미이다. 
+strncpy() 함수는 같은 기능을 하지만 복사할 문자열의 길이를 제한할 수 있다. 
+strncp(a, b, sizeof(a))은 b를 a에 저장하되 a의 사이즈만큼 저장하겠다는 의미이다.
+그러므로 strncpy는 strcpy보다 문자열을 복사하는데 더 느리지만, 안전한 함수이다.*/
+int main()
+{
+	char str[10] = "hello";
+
+	//strcpy_s(str, sizeof(str), "HELLO");
+	memcpy(str, "HELLO", strlen("HELLO")+1);
+	printf("%s\n", str);
+	return 0;
+}

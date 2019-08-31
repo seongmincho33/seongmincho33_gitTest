@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct data 
+{
+	int age;
+	char name[20];
+	char mobile[20];
+} DATA, *PDATA;
+//typedef struct data DATA;
+int main()
+{
+	DATA member[3];
+	member[0].age = 10;
+	member[1].age = 20;
+	member[2].age = 30;
+	memcpy(member[0].name, "홍길동", strlen("홍길동") + 1);
+	memcpy(member[1].name, "임꺽정", strlen("임꺽정") + 1);
+	memcpy(member[2].name, "일지매", strlen("일지매") + 1);
+	memcpy(member[0].mobile, "010-1111", strlen("010-1111") + 1);
+	memcpy(member[1].mobile, "010-2222", strlen("010-2222") + 1);
+	memcpy(member[2].mobile, "010-3333", strlen("010-3333") + 1);
+
+	char name[20];
+	printf("검색 이름 : ");
+	gets_s(name, sizeof(name));
+
+	int i = 0;
+	while (1)
+	{
+		if (i == 3)
+			break;
+		if (strcmp(name, member[i].name) == 0)
+			break;
+		i++;
+	}
+	printf("### 검색 결과 ###\n");
+	printf("이름 : %s\n", member[i].name);
+	printf("나이 : %d\n", member[i].age);
+	printf("모바일 : %s\n", member[i].mobile);
+	return 0;
+}

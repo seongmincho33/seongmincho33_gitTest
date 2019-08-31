@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+	int nData = 10;
+	int* p = &nData;
+	int** p2 = &p;
+	int*** p3 = &p2;
+
+	printf("%p\n", *p3);
+	printf("%p\n", &p);
+	printf("%p\n", p2);
+	printf("\n");
+	printf("%p\n", **p3);
+	printf("%p\n", &nData);
+	printf("%p\n", p);
+	printf("\n");
+	printf("%d\n", ***p3);
+	printf("%d\n", nData);
+	return 0;
+}

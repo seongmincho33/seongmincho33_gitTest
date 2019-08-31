@@ -1,0 +1,16 @@
+#include <stdio.h>
+int * func(int nData1, int nData2)
+{
+	int arr[2];
+	arr[0] = nData1 * 10;
+	arr[1] = nData2 * 10;
+	return arr;
+}
+int main()
+{
+	int nData1 = 10, nData2 = 20, *pArr;
+	pArr = func(nData1, nData2);
+	printf("*pArr : %d\n*(pArr+1) : %d\n", *pArr, *(pArr+1));
+	printf("*pArr : %d\n*(pArr+1) : %d\n", *pArr, *(pArr + 1));
+	return 0;
+}

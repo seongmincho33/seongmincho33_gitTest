@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char str[10] = "Care";
+	char input[10];
+
+	printf("입력 > ");
+	scanf_s("%s", input, sizeof(input));
+
+	if (strcmp(input, str) == 0)
+		printf("두 문자열 같습니다.\n");
+	else
+		printf("두 문자열 같지 않습니다.\n");
+	return 0;
+}

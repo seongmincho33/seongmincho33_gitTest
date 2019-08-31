@@ -1,0 +1,13 @@
+#include <stdio.h>
+void func(int * pData1, int * pData2)
+{
+	*pData1 = 100;
+	*pData2 = 200;
+}
+int main()
+{
+	int nData1 = 10, nData2 = 20;
+	func(&nData1, &nData2);
+	printf("nData1 : %d\nnData2 : %d\n", nData1, nData2);
+	return 0;
+}

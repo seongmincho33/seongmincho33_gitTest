@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <malloc.h>
+
+typedef struct
+{
+	int data3;
+	int data4;
+}Data2;
+typedef struct
+{
+	int data1;
+	int data2;
+	Data2 * p;
+}Data1;
+// func2 를 만들어서 func2 안에서 data3 에 100을 넣으세요.
+// func3 를 만들어서 func3 안에서 data4 에 200을 넣으세요.
+void func1(Data1 ** p)
+{
+	Data2 * p2 = (Data2 *)malloc(sizeof(Data2));
+	(*p)->p = p2;
+
+	func2((*p)->p);
+	func3(&p);	
+}
+int main()
+{
+	Data1 * p = (Data1 *)malloc(sizeof(Data1));
+	func1(&p);
+	
+	//data3 와 data4 를 출력하세요.
+	//동적할당해제
+	return 0;
+}

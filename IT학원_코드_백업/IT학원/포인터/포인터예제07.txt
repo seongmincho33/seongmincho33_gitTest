@@ -1,0 +1,15 @@
+#include <stdio.h>
+void func(int* pData)
+{
+	*pData = *pData + 200;
+}
+int main()
+{
+	int data = 10;
+
+	func(&data);
+	func(&data);
+
+	printf("%d\n", data); // 410Ãâ·Â
+	return 0;
+}
